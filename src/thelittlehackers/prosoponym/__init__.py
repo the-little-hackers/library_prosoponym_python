@@ -300,7 +300,7 @@ def format_full_name(
     ...     "aline minh anh",
     ...     "caune ly",
     ...     full_name="caune ly aline minh anh",
-    ...     country=Country('FR')
+    ...     country=Country.from_string('FR')
     ... )
     'Aline Minh Anh CAUNE LY'
 
@@ -308,7 +308,7 @@ def format_full_name(
     ...     "truc",
     ...     "nguyen",
     ...     full_name="nguyen thi thanh truc",
-    ...     country=Country('VN')
+    ...     country=Country.from_string('VN')
     ... )
     'NGUYEN Thi Thanh Truc'
     ```
@@ -340,7 +340,7 @@ def format_full_name(
         determined and `default_lexical_name_order` is not provided.
     """
     # Determine the lexical name order to use depending on the locale.
-    lexical_name_order = COUNTRY_LEXICAL_NAME_ORDERS.get(country.country_code, default_lexical_name_order)
+    lexical_name_order = COUNTRY_LEXICAL_NAME_ORDERS.get(country and country.country_code, default_lexical_name_order)
 
     # Cleanse and format the first and the last names.
     first_name = format_first_name(first_name)
@@ -364,7 +364,7 @@ def format_full_name(
     last_name_components = last_name.split()
 
     # Find the lexical name component of each word of the full name, either
-    # a first name or a last name component. Full name's words that are not
+    # a first name or a last name component.  Full name's words that are not
     # described are middle names (i.e., not part of the first and last names).
     full_name_description = __describe_full_name_components(
         full_name_components,

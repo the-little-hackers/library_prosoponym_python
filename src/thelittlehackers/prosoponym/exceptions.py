@@ -80,13 +80,16 @@ class MissingNameComponentsError(TheLittleHackersBaseError):
         self.__missing_components = missing_components
 
     def __str__(self):
+        from thelittlehackers.prosoponym import format_first_name
+        from thelittlehackers.prosoponym import format_last_name
+
         lexical_name_component_label = (
             'first name' if self.__lexical_name_component == LexicalNameComponent.FIRST_NAME
             else 'last name'
         )
         missing_components = [
             format_first_name(component) if self.__lexical_name_component == LexicalNameComponent.FIRST_NAME
-                else format_last_name(component)
+            else format_last_name(component)
             for component in self.__missing_components
         ]
         formatted_missing_components = [f'"{component}"' for component in missing_components]
@@ -97,5 +100,5 @@ class MissingNameComponentsError(TheLittleHackersBaseError):
         return self.__lexical_name_component
 
     @property
-    def missing_components(self) -> list[str]:
+    def missing_components(self) -> Sequence[str]:
         return self.__missing_components

@@ -28,7 +28,8 @@ from typing import Sequence
 import unidecode
 from thelittlehackers.model.country import Country
 
-from thelittlehackers.prosoponym.constants import LexicalNameComponent, COUNTRY_LEXICAL_NAME_ORDERS
+from thelittlehackers.prosoponym.constants import COUNTRY_LEXICAL_NAME_ORDERS
+from thelittlehackers.prosoponym.constants import LexicalNameComponent
 from thelittlehackers.prosoponym.constants import LexicalNameOrder
 from thelittlehackers.prosoponym.exceptions import IncompleteFullNameError
 from thelittlehackers.prosoponym.exceptions import InvalidLexicalNameOrderError

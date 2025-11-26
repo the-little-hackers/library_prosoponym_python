@@ -26,7 +26,7 @@ from pkgutil import extend_path
 from typing import Sequence
 
 import unidecode
-from thelittlehackers.model.country import Country
+from thelittlehackers.models.country import Country
 
 from thelittlehackers.prosoponym.constants import COUNTRY_LEXICAL_NAME_ORDERS
 from thelittlehackers.prosoponym.constants import LexicalNameComponent
@@ -278,9 +278,9 @@ def format_first_name(first_name: str) -> str:
 def format_full_name(
         first_name: str,
         last_name: str,
-        country: Country = None,
-        default_lexical_name_order: LexicalNameOrder = None,
-        full_name: str = None,
+        country: Country | None = None,
+        default_lexical_name_order: LexicalNameOrder | None = None,
+        full_name: str | None = None,
         strict: bool = True
 ) -> str:
     """

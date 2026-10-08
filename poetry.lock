@@ -770,7 +770,7 @@ unidecode = ">=1.4.0,<2.0.0"
 type = "git"
 url = "https://github.com/the-little-hackers/library_thelittlehackers-core_python.git"
 reference = "HEAD"
-resolved_reference = "6fa3ad9a1a9255bf59fc8de206a7e73506cf467e"
+resolved_reference = "0c30a88dca42db6af834ded5ded013261cc88eb2"
 
 [[package]]
 name = "toml"

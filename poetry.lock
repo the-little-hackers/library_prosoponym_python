@@ -513,7 +513,7 @@ toml = ">=0.10.2,<0.11.0"
 type = "git"
 url = "https://github.com/the-little-hackers/library_thelittlehackers-core_python.git"
 reference = "HEAD"
-resolved_reference = "ea8aca627bbcce85878fc308c886f5174582ed67"
+resolved_reference = "eea9e5fb484eb540088ce2241c8e04a64ddaa8fa"
 
 [[package]]
 name = "toml"

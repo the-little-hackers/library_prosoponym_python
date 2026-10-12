@@ -25,7 +25,7 @@ import re
 from pkgutil import extend_path
 from typing import Sequence
 
-import unidecode
+from anyascii import anyascii
 from thelittlehackers.models.country import Country
 
 from thelittlehackers.prosoponym.constants import COUNTRY_LEXICAL_NAME_ORDERS
@@ -68,7 +68,7 @@ def __normalized_name_components(name_components: Sequence[str]) -> Sequence[str
         stripped of diacritical marks, preserving the original order.
     """
     return [
-        unidecode.unidecode(component.lower())
+        anyascii(component).lower()
         for component in name_components
     ]
 
